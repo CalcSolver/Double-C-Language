@@ -1,0 +1,11 @@
+entity Enemy {
+    var hp = 100
+    var damage = 10
+
+    on collide(other) {
+        if other.tag == "Player" {
+            other.hp -= damage
+            print "Player hit!"
+        }
+    }
+}
