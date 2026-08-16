@@ -1,0 +1,31 @@
+program        = { entity | scene } ;
+
+entity         = "entity" identifier "{" { member } "}" ;
+scene          = "scene" identifier "{" { sceneMember } "}" ;
+
+member         = variable | event ;
+sceneMember    = spawnStmt ;
+
+variable       = "var" identifier "=" expression ;
+
+event          = "on" identifier "{" { statement } "}" ;
+
+spawnStmt      = "spawn" identifier "at" vector ;
+
+statement      = actionStmt | ifStmt | expressionStmt ;
+
+actionStmt     = identifier "(" [ arguments ] ")" ;
+ifStmt         = "if" expression block [ "else" block ] ;
+expressionStmt = expression ;
+
+expression     = literal | identifier | binaryExpr | callExpr ;
+
+binaryExpr     = expression operator expression ;
+callExpr       = identifier "(" [ arguments ] ")" ;
+
+arguments      = expression { "," expression } ;
+
+literal        = number | string | boolean | vector ;
+vector         = "(" number { "," number } ")" ;
+
+identifier     = letter { letter | digit | "_" } ;
