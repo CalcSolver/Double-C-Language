@@ -1,0 +1,4 @@
+scene Level1 {
+    spawn Player at (0, 0)
+    spawn Enemy at (5, 5)
+}
