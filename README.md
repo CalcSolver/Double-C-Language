@@ -64,3 +64,11 @@ jump(jumpForce)
 scene Level1 {
 spawn Player at (0, 0)
 }
+
+---
+
+## 🚀 Status
+
+Double C* is currently in **early development**.  
+Compiler, runtime, and DC* Studio integration are planned in future milestones.
+
